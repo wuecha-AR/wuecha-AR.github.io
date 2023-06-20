@@ -12,18 +12,22 @@
         vr-mode-ui="enabled: false"
         embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+        gesture-detector
     >
         <a-assets>
             <a-asset-item id="BERLINAZO" src="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/asset.glb"></a-asset-item>
         </a-assets>
 
-        <a-marker type="pattern" url="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/marker.patt">
-            <a-entity
-                scale="1.5 1.5 1.5"
-                animation-mixer="loop: repeat"
-                gltf-model="#BERLINAZO"
-            ></a-entity>
-        </a-marker>
+        <a-marker type="pattern" url="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/marker.patt"></a-marker>
+
+        <a-entity
+            scale="1.5 1.5 1.5"
+            animation-mixer="loop: repeat"
+            gltf-model="#BERLINAZO"
+            class="clickable"
+            gesture-handler="minScale: 0.25; maxScale: 10"
+        ></a-entity>
 
         <a-entity camera></a-entity>
     </a-scene>
