@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <meta charset="utf-8">
   <title>Catálogo AR</title>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
-<body>
-  <h1>CATALOGO de Realidad Aumentada (AR) 3D No.1 (PUCON)</h1>
-<p>Prueba de funcionamiento de modelos 3D</p>
+<body style="margin: 0px; overflow: hidden;">
   <a-scene embedded arjs>
-    <!-- Aquí irá el resto del código -->
+    <a-marker preset="kanji">
+      <a-image
+        src="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/marker.patt"
+        position="0 0 0"
+        scale="1 1 1"
+      ></a-image>
+      <a-entity
+        position="0 0 0"
+        scale="0.05 0.05 0.05"
+        gltf-model="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/asset.glb"
+      ></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
   </a-scene>
 </body>
 </html>
