@@ -1,26 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <meta charset="utf-8">
-  <title>Catálogo AR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <meta charset="utf-8">
+    <title>Catálogo AR</title>
 </head>
-<body style="margin: 0px; overflow: hidden;">
-  <a-scene embedded arjs>
-    <a-marker preset="kanji">
-      <a-image
-        src="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/marker.patt"
-        position="0 0 0"
-        scale="0.05 0.05 0.05"
-      ></a-image>
-      <a-entity
-        position="0 0 0"
-        scale="1 1 1"
-        gltf-model="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/asset.glb"
-      ></a-entity>
-    </a-marker>
-    <a-entity camera></a-entity>
-  </a-scene>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene
+        vr-mode-ui="enabled: false"
+        embedded
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    >
+        <a-assets>
+            <a-asset-item id="BERLINAZO" src="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/asset.glb"></a-asset-item>
+        </a-assets>
+
+        <a-marker type="pattern" url="https://rawcdn.githack.com/wuecha-AR/wuecha-AR.github.io/c2c3e0df126babe9362fa8268ea4ae6797119646/marker.patt">
+            <a-entity
+                scale="1.5 1.5 1.5"
+                animation-mixer="loop: repeat"
+                gltf-model="#BERLINAZO"
+            ></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
 </body>
 </html>
